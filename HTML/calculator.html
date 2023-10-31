@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td{
+            padding:1rem
+        }
+    </style>
+</head>
+<body>
+    <table border="1px solid black">
+        <tr>
+            <td colspan=3 ><input type="text" id="ans"></td>
+            <td style="background-color:green">AC</td>
+        </tr>
+        <tr>
+            <td><button id="btn9" onclick="append('9')">9</button></td>
+            <td><button id="btn8" onclick="append('8')">8</button></td>
+            <td><button id="btn7" onclick="append('7')">7</td>
+            <td><button id="add" onclick="append('+')">+</td>
+        </tr>
+        <tr>
+            <td><button id="btn4" onclick="append('4')">4</td>
+            <td><button id="btn5" onclick="append('5')">5</td>
+            <td><button id="btn6" onclick="append('6')">6</td>
+            <td><button id="sub" onclick="append('-')">-</td>
+        </tr>
+        <tr>
+            <td ><button id="btn1" onclick="append('1')">1</td>
+            <td><button id="btn2" onclick="append('2')">2</td>
+            <td><button id="btn3" onclick="append('3')">3</td>
+            <td><button id="div" onclick="append('/')">/</td>
+        </tr>
+        <tr>
+            <td><button id="clear" onclick="clear()">C</td>
+            <td><button id="btn0" onclick="append('0')">0</td>
+            <td><button id="equals" onclick="calculateResult()">=</td>
+            <td><button id="mul" onclick="append('*')">*</td>
+        </tr>
+    </table>
+</body>
+<script>
+function append(value)
+{
+    document.getElementById('ans').value+=value
+}
+function clear()
+{
+    document.getElementById('clear').value=''
+}
+function calculateResult() {
+  try {
+    document.getElementById('ans').value = eval(document.getElementById('ans').value);
+  } catch (error) {
+    document.getElementById('ans').value = 'Error';
+  }
+}
+</script>
+</html>
